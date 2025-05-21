@@ -1,0 +1,11 @@
+<odoo>
+   <record id="module_purchase_goods" model="ir.module.category">
+               <field name="name">bookstore</field>
+               <field name="description">Customer Feedback Form</field>
+   </record>
+               <!--  Group: Delivered  -->
+   <record id="group_employee_delivered" model="res.groups">
+               <field name="name">Delivered</field>
+               <field name="category_id" ref="bookstore.module_purchase_goods"/>
+   </record>
+</odoo>

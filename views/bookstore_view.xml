@@ -1,0 +1,55 @@
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_book_details_tree" model="ir.ui.view">
+        <field name="name">book.details.tree</field>
+        <field name="model">book.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="author_id"/>
+                <field name="title"/>
+                <field name="publisher"/>
+                <field name="published_date"/>
+                <field name="book_age"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_book_details_form" model="ir.ui.view">
+        <field name="name">book.details.form</field>
+        <field name="model">book.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="author_id"/>
+                    <field name="title"/>
+                    <field name="publisher"/>
+                    <field name="published_date"/>
+                    <field name="book_age" readonly="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_book_details" model="ir.actions.act_window">
+        <field name="name">Book Details</field>
+        <field name="res_model">book.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first book record.
+            </p>
+        </field>
+    </record>
+            <!-- Root Menu -->
+    <menuitem id="menu_bookstore_root" name="Bookstore" sequence="10"
+              groups="bookstore.group_employee_delivered"/>
+
+    <!-- Submenu for Books -->
+    <menuitem id="menu_bookstore_books" name="Books"
+              action="action_book_details"
+              parent="menu_bookstore_root" sequence="20"
+              groups="bookstore.group_employee_delivered"/>
+</odoo>

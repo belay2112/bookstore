@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_book_details,book.details,model_book_details,base.group_user,1,1,1,1
+access_create_author_wizard,create.author.wizard,model_create_author_wizard,base.group_user,1,1,1,1
+access_res_users,res.users,model_res_users,base.group_user,1,1,1,1
+
+
+
+
